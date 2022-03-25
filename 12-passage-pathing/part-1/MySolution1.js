@@ -30,7 +30,7 @@ const computeAllPaths = (startNode, adjacencyList) => {
 
   let allPathsStartingInEnds = []
   for (const end of adjacencyList[startNode]) {
-    const adjacencyListDeepCopy = JSON.parse(JSON.stringify(adjacencyList)) //!!!
+    const adjacencyListDeepCopy = JSON.parse(JSON.stringify(adjacencyList))
     const allPathsStartingInEnd = computeAllPaths(end, adjacencyListDeepCopy)
     allPathsStartingInEnds = [...allPathsStartingInEnds, ...allPathsStartingInEnd]
   }
@@ -39,8 +39,11 @@ const computeAllPaths = (startNode, adjacencyList) => {
   return allPaths
 }
 
-const fileName = process.argv.slice(2)[0]
-const adjacencyList = parseInput(fileName);
-const allPaths = computeAllPaths("start", adjacencyList)
-// console.log(allPaths)
-console.log(allPaths.length)
+const passagePathing1 = (fileName) => {
+  const adjacencyList = parseInput(fileName);
+  const allPaths = computeAllPaths("start", adjacencyList)
+  // console.log(allPaths)
+  return allPaths.length
+}
+
+module.exports = passagePathing1;

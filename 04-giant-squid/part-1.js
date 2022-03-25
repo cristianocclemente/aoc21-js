@@ -84,3 +84,8 @@ const getFirstWinningBoardScore = (numbers, boards) => {
 const { numbers, boards } = parseInput("input.txt");
 const firstWinningBoardScore = getFirstWinningBoardScore(numbers, boards);
 console.log(firstWinningBoardScore);
+
+module.exports = {
+  parseInputFile,
+  myAlgorithm
+};
