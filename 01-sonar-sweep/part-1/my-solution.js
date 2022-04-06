@@ -1,32 +1,35 @@
 const fs = require("fs");
 
 const parseInputFile = (filePath) => {
-  const numbers = fs
+  const seaFloorDepths = fs
     .readFileSync(filePath)
     .toString()
     .split("\n")
     .map((line) => parseInt(line));
 
-  return numbers
+  return seaFloorDepths
 }
 
-const myAlgorithm = (numbers) => {
-  let increases = 0;
+const myAlgorithm = (depths) => {
+  let numberMeasurementsLargerThanPreviousMeasurement = 0;
   let index1 = 0;
   let index2 = 1;
 
-  while (index2 <= numbers.length - 1) {
-    const firstElement = numbers[index1];
-    const secondElement = numbers[index2];
-    if (secondElement > firstElement) increases++;
+  while (index2 <= depths.length - 1) {
+    const firstElement = depths[index1];
+    const secondElement = depths[index2];
+    if (secondElement > firstElement) numberMeasurementsLargerThanPreviousMeasurement++;
     index1++;
     index2++;
   }
 
-  return increases
+  return numberMeasurementsLargerThanPreviousMeasurement
 }
 
-module.exports = {
-  parseInputFile,
-  myAlgorithm
-};
+const mySolution = filePath => {
+  const seaFloorDepths = parseInputFile(filePath)
+  const numberMeasurementsLargerThanPreviousMeasurement = myAlgorithm(seaFloorDepths)
+  return numberMeasurementsLargerThanPreviousMeasurement
+}
+
+module.exports = mySolution

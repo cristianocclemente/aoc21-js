@@ -39,7 +39,10 @@ const myAlgorithm = (bNumbers) => {
   return lifeSupportRating
 }
 
-module.exports = {
-  parseInputFile,
-  myAlgorithm
-};
+const mySolution = filePath => {
+  const bNumbers = parseInputFile(filePath)
+  const lifeSupportRating = myAlgorithm(bNumbers)
+  return lifeSupportRating
+}
+
+module.exports = mySolution

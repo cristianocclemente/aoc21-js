@@ -1,6 +1,9 @@
-const { parseInputFile, myAlgorithm } = require('./my-solution');
+const mySolution = require('./my-solution');
 
-test('a.in', () => {
-    const bNumbers = parseInputFile("./03-binary-diagnostic/part-1/a.in")
-    expect(myAlgorithm(bNumbers)).toBe(198);
+test('example input', () => {
+    expect(mySolution("./03-binary-diagnostic/example-input.in")).toBe(198);
+});
+
+test('my input', () => {
+    expect(mySolution("./03-binary-diagnostic/my-input.in")).toBe(3969000);
 });

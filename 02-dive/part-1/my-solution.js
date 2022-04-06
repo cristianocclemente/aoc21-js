@@ -28,7 +28,10 @@ const myAlgorithm = (instructions) => {
   return horizontalPosition * depth;
 }
 
-module.exports = {
-  parseInputFile,
-  myAlgorithm
-};
+const mySolution = filePath => {
+  const instructions = parseInputFile(filePath)
+  const finalHorizontalPositionTimesFinalDepth = myAlgorithm(instructions)
+  return finalHorizontalPositionTimesFinalDepth
+}
+
+module.exports = mySolution

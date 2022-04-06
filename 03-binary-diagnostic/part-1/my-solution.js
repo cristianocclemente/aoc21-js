@@ -35,7 +35,10 @@ const myAlgorithm = (bNumbers) => {
   return powerConsumption
 }
 
-module.exports = {
-  parseInputFile,
-  myAlgorithm
-};
+const mySolution = filePath => {
+  const bNumbers = parseInputFile(filePath)
+  const powerConsumption = myAlgorithm(bNumbers)
+  return powerConsumption
+}
+
+module.exports = mySolution

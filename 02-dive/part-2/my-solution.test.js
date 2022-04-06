@@ -1,6 +1,9 @@
-const { parseInputFile, myAlgorithm } = require('./my-solution');
+const mySolution = require('./my-solution');
 
-test('a.in', () => {
-    const numbers = parseInputFile("./02-dive/part-2/a.in")
-    expect(myAlgorithm(numbers)).toBe(900);
+test('example input', () => {
+    expect(mySolution("./02-dive/example-input.in")).toBe(900);
+});
+
+test('my input', () => {
+    expect(mySolution("./02-dive/my-input.in")).toBe(1599311480);
 });
