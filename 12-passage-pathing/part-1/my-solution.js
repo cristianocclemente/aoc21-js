@@ -30,7 +30,7 @@ const computeAllPaths = (startNode, adjacencyList) => {
 
   let allPathsStartingInEnds = []
   for (const end of adjacencyList[startNode]) {
-    const adjacencyListDeepCopy = JSON.parse(JSON.stringify(adjacencyList))
+    const adjacencyListDeepCopy = JSON.parse(JSON.stringify(adjacencyList)) // !!!
     const allPathsStartingInEnd = computeAllPaths(end, adjacencyListDeepCopy)
     allPathsStartingInEnds = [...allPathsStartingInEnds, ...allPathsStartingInEnd]
   }
