@@ -3,7 +3,7 @@
     "test": "jest",
     "test:watch": "jest --watch"
   },
-  "devDependencies": {
-    "jest": "^27.5.1"
+  "dependencies": {
+    "jest": "^28.1.2"
   }
 }
